@@ -1,4 +1,5 @@
 export interface Photo {
+  json(): Photo | PromiseLike<Photo>;
   id: string;
   alt_description: string;
   urls: {
