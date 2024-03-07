@@ -13,7 +13,7 @@ const ImageDetail: FC<ImageProp> = ({ photo }) => {
         {photo.alt_description}
       </h1>
       <Image
-        src={photo.urls.regular}
+        src={'/grid.png'}
         width={1000}
         height={600}
         alt={photo.alt_description}

@@ -13,8 +13,10 @@ const getPhotos = async (): Promise<Photo[]> => {
   return data;
 };
 
-export const getPhoto = async (slug: string) => {
-  return await fetch(`https://api.unsplash.com/photos/${slug}`);
+export const getPhoto = async (id: string) => {
+  const response = await fetch(`https://api.unsplash.com/photos/${id}`);
+  const data = await response.json();
+  return data as Photo;
 };
 
 export const getUser = async (username: string) => {

@@ -1,17 +1,15 @@
 import ImageDetail from "@/components/ImageDetail";
-import { Photo } from "@/libs/types";
 import { getPhoto } from "@/libs/unsplash";
 import { FC } from "react";
 
 interface PhotoProps {
   params: {
-    slug: string;
+    id: string;
   };
 }
 
 const PhotoDetailsPage: FC<PhotoProps> = async ({ params }) => {
-  const response = await getPhoto(params.slug);
-  const photo = (await response.json()) as Photo;
+  const photo = await getPhoto(params.id);
   return <ImageDetail photo={photo} />;
 };
 
