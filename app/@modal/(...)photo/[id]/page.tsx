@@ -10,6 +10,7 @@ interface ModalDetailsPageProps {
 
 const ModalDetailsPage: FC<ModalDetailsPageProps> = async ({ params }) => {
   const photo = await getPhoto(params.id);
+  console.log(photo)
   return (
     <div className="fixed inset-0 bg-zinc-900/50 z-50">
       <div className="flex items-center h-full max-w-3xl mx-auto">
