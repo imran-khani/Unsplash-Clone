@@ -1,19 +1,8 @@
+import { Photo } from "./types";
+
 const headers = {
   Authorization: `Client-ID ${process.env.UNSPLASH_ACCESS_KEY}`,
 };
-
-interface Photo {
-  id: string;
-  alt_description: string;
-  urls: {
-    small: string;
-    regular: string;
-    full: string;
-  };
-  links: {
-    download_location: string;
-  };
-}
 
 const getPhotos = async (): Promise<Photo[]> => {
   const url = new URL("https://api.unsplash.com/photos");
@@ -24,9 +13,16 @@ const getPhotos = async (): Promise<Photo[]> => {
   return data;
 };
 
+export const getPhoto = async (slug: string) => {
+  return await fetch(`https://api.unsplash.com/photos/${slug}`);
+};
 
-export const getPhoto = async (id:string)=>{
-  return await fetch(`https://api.unsplash.com/photos/${id}`)
-}
+export const getUser = async (username: string) => {
+  const response = await fetch(`https://api.unsplash.com/users/${username}`, {
+    headers,
+  });
+  const data = await response.json();
+  return data;
+};
 
 export default getPhotos;

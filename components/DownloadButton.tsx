@@ -31,6 +31,8 @@ const DownloadButton: FC<DownloadButtonProps> = ({
 
   return (
     <button
+      aria-label="Download Image"
+      title="Download This Image"
       onClick={handleDownload}
       className={`absolute bottom-5 right-3 bg-white text-black p-2 rounded ${className}`}
     >
