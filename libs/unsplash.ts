@@ -4,9 +4,14 @@ const headers = {
 
 interface Photo {
   id: string;
+  alt_description: string;
   urls: {
     small: string;
     regular: string;
+    full: string;
+  };
+  links: {
+    download_location: string;
   };
 }
 
@@ -18,5 +23,10 @@ const getPhotos = async (): Promise<Photo[]> => {
   const data = await response.json();
   return data;
 };
+
+
+export const getPhoto = async (id:string)=>{
+  return await fetch(`https://api.unsplash.com/photos/${id}`)
+}
 
 export default getPhotos;
