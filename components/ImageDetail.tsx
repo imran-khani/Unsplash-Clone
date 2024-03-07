@@ -13,8 +13,8 @@ const ImageDetail: FC<ImageProp> = ({ photo }) => {
         {photo.alt_description}
       </h1>
       <Image
-        src={photo.urls.small}
-        width={1000}
+        src={photo.urls.regular}
+        width={600}
         height={600}
         alt={photo.alt_description}
         className="object-cover mx-auto"

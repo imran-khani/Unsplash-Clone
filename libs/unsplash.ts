@@ -14,7 +14,9 @@ const getPhotos = async (): Promise<Photo[]> => {
 };
 
 export const getPhoto = async (id: string) => {
-  const response = await fetch(`https://api.unsplash.com/photos/${id}`);
+  const response = await fetch(`https://api.unsplash.com/photos/${id}`, {
+    headers,
+  });
   const data = await response.json();
   return data;
 };
