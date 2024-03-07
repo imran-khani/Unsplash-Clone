@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { FC } from "react";
-import { BiCross } from "react-icons/bi";
+import { IoClose } from "react-icons/io5";
 
 interface OutSideModalProps {
   children: React.ReactNode;
@@ -10,13 +10,19 @@ interface OutSideModalProps {
 
 const OutSideModal: FC<OutSideModalProps> = ({ children }) => {
   const router = useRouter();
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    router.back();
+  };
+
   return (
     <div
-      onClick={() => router.back()}
+      onClick={handleClick}
       className="fixed inset-0 bg-zinc-900/50 z-50"
     >
       <span className="absolute top-10 right-10">
-        <BiCross />
+      <IoClose className="cursor-pointer" />
+
       </span>
       {children}
     </div>

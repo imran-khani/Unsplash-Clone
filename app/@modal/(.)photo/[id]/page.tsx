@@ -1,5 +1,6 @@
 import ImageDetail from "@/components/ImageDetail";
-import OutSideModal from "@/components/OutSideModal";
+import InnerModal from "@/components/Modals/InnerModal";
+import OutSideModal from "@/components/Modals/OutSideModal";
 import { getPhoto } from "@/libs/unsplash";
 import { FC } from "react";
 
@@ -13,11 +14,11 @@ const ModalDetailPage: FC<ModalDetailPageProps> = async ({ params }) => {
 
   return (
     <OutSideModal>
-      <div className="flex items-center h-full max-w-3xl mx-auto mt-10">
-        <div className="relative bg-white w-full py-20 px-2 rounded-lg">
+      <InnerModal className="flex items-center h-full max-w-6xl mx-auto mt-4">
+        <div className="relative bg-white w-full py-7 px-2 rounded-lg">
           <ImageDetail photo={photo} />
         </div>
-      </div>
+      </InnerModal>
     </OutSideModal>
   );
 };

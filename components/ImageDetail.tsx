@@ -1,6 +1,7 @@
 import { Photo } from "@/libs/types";
 import Image from "next/image";
 import { FC } from "react";
+import AuthorDetail from "./AuthorDetail";
 
 interface ImageProp {
   photo: Photo;
@@ -9,15 +10,15 @@ interface ImageProp {
 const ImageDetail: FC<ImageProp> = ({ photo }) => {
   return (
     <div>
-      <h1 className="font-bold text-2xl text-center my-10">
-        {photo.alt_description}
-      </h1>
+      <AuthorDetail photo={photo} />
       <Image
         src={photo.urls.regular}
         width={600}
         height={600}
         alt={photo.alt_description}
-        className="object-cover mx-auto"
+        className="object-cover mx-auto w-[600px] h-[600px] cursor-zoom-in"
+        placeholder="blur"
+        blurDataURL={photo.urls.small}
       />
     </div>
   );
