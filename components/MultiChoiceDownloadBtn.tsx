@@ -1,4 +1,5 @@
 "use client";
+import { useModal } from "@/hooks/useModal";
 import { FC } from "react";
 
 interface MultiChoiceDownloadBtnProps {
@@ -12,7 +13,14 @@ interface MultiChoiceDownloadBtnProps {
 }
 
 const MultiChoiceDownloadBtn: FC<MultiChoiceDownloadBtnProps> = ({ urls }) => {
-  return <div>MultiChoiceDownloadBtn</div>;
+  const modalState = useModal()
+  return (
+    <>
+    <div className="relative">
+      <button></button>
+    </div>
+    </>
+  )
 };
 
 export default MultiChoiceDownloadBtn;

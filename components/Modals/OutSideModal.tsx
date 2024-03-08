@@ -18,11 +18,10 @@ const OutSideModal: FC<OutSideModalProps> = ({ children }) => {
   return (
     <div
       onClick={handleClick}
-      className="fixed inset-0 bg-zinc-900/50 z-50"
+      className="fixed inset-0 z-50 overflow-y-auto bg-zinc-900/50"
     >
-      <span className="absolute top-10 right-10">
-      <IoClose className="cursor-pointer" />
-
+      <span className="absolute right-10 top-10">
+        <IoClose className="cursor-pointer" size={50} />
       </span>
       {children}
     </div>

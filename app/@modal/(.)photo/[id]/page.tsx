@@ -14,8 +14,8 @@ const ModalDetailPage: FC<ModalDetailPageProps> = async ({ params }) => {
 
   return (
     <OutSideModal>
-      <InnerModal className="flex items-center h-full max-w-6xl mx-auto mt-4">
-        <div className="relative bg-white w-full py-7 px-2 rounded-lg">
+      <InnerModal className="mx-auto mt-10 flex h-auto max-w-6xl items-center">
+        <div className="relative w-full rounded-lg bg-white px-2 py-7">
           <ImageDetail photo={photo} />
         </div>
       </InnerModal>
