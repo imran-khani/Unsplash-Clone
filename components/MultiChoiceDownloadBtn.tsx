@@ -1,6 +1,7 @@
 "use client";
 import { useModal } from "@/hooks/useModal";
 import { FC } from "react";
+import { IoArrowDownCircleOutline } from "react-icons/io5";
 
 interface MultiChoiceDownloadBtnProps {
   urls: {
@@ -17,7 +18,13 @@ const MultiChoiceDownloadBtn: FC<MultiChoiceDownloadBtnProps> = ({ urls }) => {
   return (
     <>
     <div className="relative">
-      <button></button>
+      <div className="flex gap-x-1">
+      <button>Download</button>
+      <button onClick={modalState.onOpen}>
+        <IoArrowDownCircleOutline className="w-5 h-5" />
+      </button>
+
+      </div>
     </div>
     </>
   )
