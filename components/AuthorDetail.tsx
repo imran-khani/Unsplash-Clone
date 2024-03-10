@@ -33,9 +33,10 @@ const AuthorDetail: FC<AuthorDetailProps> = ({ photo }) => {
           </span>
         </div>
       </div>
-      <div className="">
-        <MultiChoiceDownloadBtn urls={photo.urls} />
-      </div>
+      <MultiChoiceDownloadBtn
+        urls={photo.urls}
+        imgTitle={photo.alt_description}
+      />
     </div>
   );
 };
