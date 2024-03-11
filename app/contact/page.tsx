@@ -6,7 +6,6 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { sendEmail } from "../action";
 
-
 export const formSchema = zod.object({
   name: zod
     .string()
